@@ -6,6 +6,9 @@ folder, but that interface has been removed in favor of using **NocoDB** for a
 web-based spreadsheet UI. The server now solely provides the API endpoints
 under `/api` which can be consumed directly or integrated with NocoDB.
 
+Copy `.env.example` to `.env` and fill in your own database credentials before
+starting the server.
+
 To start the server:
 
 ```bash

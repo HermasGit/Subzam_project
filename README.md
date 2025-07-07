@@ -16,6 +16,24 @@ npm install
 npm start
 ```
 
+## Database Setup
+
+Create the PostgreSQL user and database before launching the API or NocoDB.
+Below are example commands you can run as the `postgres` superuser (you can
+enter them in DBeaver's SQL editor or in `psql`):
+
+```sql
+CREATE USER hermasstaff WITH PASSWORD 'hermas1234';
+CREATE DATABASE subzam_db OWNER hermasstaff;
+```
+
+Once the database is created, run the `create_subzam_db.sql` script to set up
+the `production_logs` table:
+
+```bash
+psql -U hermasstaff -d subzam_db -f create_subzam_db.sql
+```
+
 ## Launching NocoDB
 
 The project now relies on [NocoDB](https://github.com/nocodb/nocodb) for its web UI.

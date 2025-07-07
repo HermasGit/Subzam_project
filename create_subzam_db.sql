@@ -1,7 +1,10 @@
--- Run this as a superuser (e.g., postgres) to create the database
-CREATE DATABASE subzam_db;
+-- Create the application user and database
+CREATE USER hermasstaff WITH PASSWORD 'hermas1234';
+CREATE DATABASE subzam_db OWNER hermasstaff;
 
--- Connect to subzam_db, then run the following to create the table
+\c subzam_db
+
+-- Table for recording production logs
 CREATE TABLE production_logs (
   id SERIAL PRIMARY KEY,
   entry_date DATE NOT NULL,
